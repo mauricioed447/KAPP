@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 // Configuración de Supabase con variables de entorno
 const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY;
@@ -38,7 +40,7 @@ export class SupabaseClient {
       try {
         return JSON.parse(text);
       } catch (jsonError) {
-        console.error('JSON parse error:', jsonError);
+        console.error('JSON parse error:', jsonError, 'Response text:', text);
         return [];
       }
     } catch (error) {
@@ -50,11 +52,23 @@ export class SupabaseClient {
   async select(table, filters = '') {
     return this.query(table, 'GET', null, filters);
   }
+
+  async insert(table, data) {
+    return this.query(table, 'POST', data);
+  }
+
+  async update(table, data, filters) {
+    return this.query(table, 'PATCH', data, filters);
+  }
+
+  async delete(table, filters) {
+    return this.query(table, 'DELETE', null, filters);
+  }
 }
 
 // Verificar configuración
 if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-  console.error('❌ Variables de entorno faltantes');
+  console.error('❌ Variables de entorno faltantes. Configura REACT_APP_SUPABASE_URL y REACT_APP_SUPABASE_ANON_KEY');
 }
 
 // Instancia del cliente
