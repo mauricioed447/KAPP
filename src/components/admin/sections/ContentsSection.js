@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { AdminToolbar } from '../AdminToolbar';
 import { AdminTable } from '../AdminTable';
 import { AdminFormModal } from '../AdminFormModal';
-import { supabase } from '../../services/supabase';
-import { useSupabase } from '../../services/hooks';
-import { CONTENT_TYPES } from '../../utils/constants';
+import { supabase } from '../../../services/supabase';
+import { useSupabase } from '../../../services/hooks';
+import { CONTENT_TYPES } from '../../../utils/constants';
+import { generateId } from '../../../utils/helpers';
 
 export const ContentsSection = () => {
   const [contents, setContents] = useState([]);
