@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../services/supabase';
-import { useSupabase, useAppState } from '../services/hooks';
+import { supabase } from '../../services/supabase';
+import { useSupabase, useAppState } from '../../services/hooks';
 import { StudentLogin } from './StudentLogin';
 import { StudentDashboard } from './StudentDashboard';
 import { UnitSelector } from './UnitSelector';
 import { TopicSelector } from './TopicSelector';
 import { ContentViewer } from './ContentViewer';
+import { CourseSelector } from './CourseSelector';
 
 export const StudentApp = ({ navigate }) => {
   // Estados principales
