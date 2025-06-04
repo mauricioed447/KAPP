@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { NavigationHeader } from '../common/NavigationHeader';
 import { TabNavigation } from '../common/TabNavigation';
-import { BookOpen, FileText, PlayCircle } from '../common/Icons';
+import { BookOpen, FileText, PlayCircle, X } from '../common/Icons';
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { ErrorMessage } from '../common/ErrorMessage';
+import { Card } from '../common/Card';
 
 export const ContentViewer = ({ 
   level,
@@ -23,9 +24,15 @@ export const ContentViewer = ({
     if (!contents || contents.length === 0) return { lessons: [], notes: [], quizzes: [] };
     
     return {
-      lessons: contents.filter(c => c.content_type === 'lesson').sort((a, b) => a.order_position - b.order_position),
-      notes: contents.filter(c => c.content_type === 'notes').sort((a, b) => a.order_position - b.order_position),
-      quizzes: contents.filter(c => c.content_type === 'quiz').sort((a, b) => a.order_position - b.order_position)
+      lessons: contents
+        .filter(c => c.content_type === 'lesson')
+        .sort((a, b) => a.order_position - b.order_position),
+      notes: contents
+        .filter(c => c.content_type === 'notes')
+        .sort((a, b) => a.order_position - b.order_position),
+      quizzes: contents
+        .filter(c => c.content_type === 'quiz')
+        .sort((a, b) => a.order_position - b.order_position)
     };
   };
 
@@ -159,11 +166,6 @@ export const ContentViewer = ({
     </div>
   );
 };
-
-// Este componente auxiliar (ContentList) se encuentra en el mismo archivo:
-import { useState } from 'react';
-import { Card } from '../common/Card';
-import { BookOpen, FileText, PlayCircle, X } from '../common/Icons';
 
 const ContentList = ({ items, type, course, emptyMessage, emptyIcon }) => {
   const [selectedContent, setSelectedContent] = useState(null);
