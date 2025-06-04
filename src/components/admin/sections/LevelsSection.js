@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { AdminToolbar } from '../AdminToolbar';
 import { AdminTable } from '../AdminTable';
 import { AdminFormModal } from '../AdminFormModal';
-import { supabase } from '../../services/supabase';
-import { useSupabase } from '../../services/hooks';
-import { generateId } from '../../utils/helpers';
+import { supabase } from '../../../services/supabase';
+import { useSupabase } from '../../../services/hooks';
+import { generateId } from '../../../utils/helpers';
 
 export const LevelsSection = () => {
   const [levels, setLevels] = useState([]);
