@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../services/supabase';
-import { useSupabase } from '../services/hooks';
+import { supabase } from '../../services/supabase';
+import { useSupabase } from '../../services/hooks';
 import { AdminLogin } from './AdminLogin';
 import { AdminHeader } from './AdminHeader';
 import { AdminNavigation } from './AdminNavigation';
