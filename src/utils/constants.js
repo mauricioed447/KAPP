@@ -21,5 +21,10 @@ export const COLOR_GRADIENTS = [
   { value: 'from-green-400 to-green-600', name: 'Verde' },
   { value: 'from-purple-400 to-purple-600', name: 'Morado' },
   { value: 'from-red-400 to-red-600', name: 'Rojo' },
-  { value: 'from-yellow-400 to-yellow-600', name: 'Amarillo' }
+  { value: 'from-yellow-400 to-yellow-600', name: 'Amarillo' },
+  { value: 'from-pink-400 to-pink-600', name: 'Rosa' },
+  { value: 'from-indigo-400 to-indigo-600', name: 'Índigo' },
+  { value: 'from-teal-400 to-teal-600', name: 'Turquesa' },
+  { value: 'from-orange-400 to-orange-600', name: 'Naranja' },
+  { value: 'from-cyan-400 to-cyan-600', name: 'Cian' }
 ];
